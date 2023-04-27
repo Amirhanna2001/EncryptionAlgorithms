@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EncryptionAlgorithms.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace EncryptionAlgorithms.Controllers
 {
@@ -7,6 +8,13 @@ namespace EncryptionAlgorithms.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult Index(MessageViewModel model)
+        {
+            ReturnViewModel returnViewModel = new ();
+            returnViewModel.Message = model.Message;
+            returnViewModel.Result = Encrypt(model.Message, 3);
+            return View(returnViewModel);
         }
         public static string Encrypt(string plaintext, int shift)
         {

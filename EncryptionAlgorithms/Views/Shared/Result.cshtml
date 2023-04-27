@@ -1,0 +1,18 @@
+﻿@model ReturnViewModel 
+@ViewData["title"] = "Result Page";
+
+<form>
+    <div class="mb-3">
+        <label asp-for="Message" class="form-label">Message</label>
+        <input type="text" class="form-control" asp-for="Message">
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Result" class="form-label">Result</label>
+        <input type="text" class="form-control" asp-for="Result">
+        <span asp-validation-for="Result" class="text-danger"></span>
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
