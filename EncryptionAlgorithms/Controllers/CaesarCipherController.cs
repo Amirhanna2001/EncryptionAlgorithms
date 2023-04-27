@@ -26,12 +26,12 @@ namespace EncryptionAlgorithms.Controllers
             returnViewModel.Result = Encrypt(model.Message, 10);
             return View(returnViewModel);
         }
-        public IActionResult Dencription()
+        public IActionResult Decryption()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Dencription(ReturnViewModel model)
+        public IActionResult Decryption(ReturnViewModel model)
         {
             if (!ModelState.IsValid) 
                 return View(model);
@@ -39,13 +39,13 @@ namespace EncryptionAlgorithms.Controllers
             if(model.Message == null)
             {
                 ModelState.AddModelError("Message", "Message can't be null !");
-                return View("Result", model);
+                return View(model);
 
             }
             ReturnViewModel returnViewModel = new ();
             returnViewModel.Message = model.Message;
-            returnViewModel.Result = Encrypt(model.Message, 10);
-            return View("Result", returnViewModel);
+            returnViewModel.Result = Decrypt(model.Message, 10);
+            return View( returnViewModel);
         }
         public static string Encrypt(string plaintext, int shift)
         {

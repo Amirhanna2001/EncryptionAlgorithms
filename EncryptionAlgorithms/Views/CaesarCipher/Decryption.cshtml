@@ -1,0 +1,24 @@
+﻿@model ReturnViewModel
+@{
+    ViewData["Title"] = "Caesar Cipher Decryption";
+}
+
+<h1>@ViewData["title"]</h1>
+
+<form method="post">
+    <div class="mb-3">
+        <label asp-for="Message" class="form-label"></label>
+        <input type="text" class="form-control" asp-for="Message">
+        <span asp-validation-for="Message" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Result" class="form-label"></label>
+        <input disabled type="text" class="form-control" asp-for="Result">
+        <span asp-validation-for="Result" class="text-danger"></span>
+    </div>
+
+    <button type="submit" asp-controller="CaesarCipher" asp-action="decryption" class="btn btn-primary">
+        Submit
+    </button>
+</form>
