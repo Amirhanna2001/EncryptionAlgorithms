@@ -5,6 +5,10 @@ namespace EncryptionAlgorithms.Controllers
 {
     public class CaesarCipherController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
         public IActionResult Encryption()
         {
             return View();

@@ -8,6 +8,10 @@ namespace EncryptionAlgorithms.Controllers
     {
         private static string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private static string key = "QWERTYUIOPASDFGHJKLZXCVBNM";
+        public IActionResult Index()
+        {
+            return View();
+        }
         public IActionResult Encryption()
         {
             return View();

@@ -1,0 +1,9 @@
+﻿@model ReturnViewModel
+@{
+    ViewData["Title"] = "Caesar Cipher Home Page";
+}
+
+<h1>@ViewData["title"]</h1>
+
+<a class="btn btn-primary" asp-controller="CaesarCipher" asp-action="Encryption">Encryption</a>
+<a class="btn btn-primary" asp-controller="CaesarCipher" asp-action="Decryption">Decryption</a>
