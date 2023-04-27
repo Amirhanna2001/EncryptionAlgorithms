@@ -1,6 +1,6 @@
 ﻿@model ReturnViewModel
 @{
-    ViewData["Title"] = "Monoalphabetic Cipher Encription";
+    ViewData["Title"] = "Caesar Cipher Encription";
 }
 
 <h1>@ViewData["title"]</h1>
@@ -18,7 +18,6 @@
         <span asp-validation-for="Result" class="text-danger"></span>
     </div>
 
-    <button type="submit" asp-controller="MonoalphabeticCipher" asp-action="Encription" class="btn btn-primary">
-        Submit
-    </button>
+    <button type="submit" asp-controller="CaesarCipher" asp-action="Encryption" class="btn btn-primary">
+        Submit</button>
 </form>

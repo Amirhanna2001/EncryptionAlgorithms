@@ -5,12 +5,12 @@ namespace EncryptionAlgorithms.Controllers
 {
     public class CaesarCipherController : Controller
     {
-        public IActionResult Encription()
+        public IActionResult Encryption()
         {
             return View();
         }
         [HttpPost]
-        public IActionResult Encription(ReturnViewModel model)
+        public IActionResult Encryption(ReturnViewModel model)
         {
             if (!ModelState.IsValid) 
                 return View(model);
