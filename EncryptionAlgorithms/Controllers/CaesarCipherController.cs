@@ -5,16 +5,47 @@ namespace EncryptionAlgorithms.Controllers
 {
     public class CaesarCipherController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Encription()
         {
             return View();
         }
-        public IActionResult Index(MessageViewModel model)
+        [HttpPost]
+        public IActionResult Encription(ReturnViewModel model)
         {
+            if (!ModelState.IsValid) 
+                return View(model);
+
+            if(model.Message == null)
+            {
+                ModelState.AddModelError("Message", "Message can't be null !");
+                return View( model);
+
+            }
             ReturnViewModel returnViewModel = new ();
             returnViewModel.Message = model.Message;
-            returnViewModel.Result = Encrypt(model.Message, 3);
+            returnViewModel.Result = Encrypt(model.Message, 10);
             return View(returnViewModel);
+        }
+        public IActionResult Dencription()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Dencription(ReturnViewModel model)
+        {
+            if (!ModelState.IsValid) 
+                return View(model);
+
+            if(model.Message == null)
+            {
+                ModelState.AddModelError("Message", "Message can't be null !");
+                return View("Result", model);
+
+            }
+            ReturnViewModel returnViewModel = new ();
+            returnViewModel.Message = model.Message;
+            returnViewModel.Result = Encrypt(model.Message, 10);
+            return View("Result", returnViewModel);
         }
         public static string Encrypt(string plaintext, int shift)
         {
