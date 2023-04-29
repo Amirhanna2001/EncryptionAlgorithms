@@ -1,6 +1,5 @@
 ﻿using EncryptionAlgorithms.AlgorithmsCode;
 using EncryptionAlgorithms.ViewModels;
-using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EncryptionAlgorithms.Controllers

@@ -31,6 +31,7 @@ namespace EncryptionAlgorithms.Controllers
             returnViewModel.Result =Caesar.Encrypt(model.Message, 10);
             return View(returnViewModel);
         }
+        [HttpGet]//Default
         public IActionResult Decryption()
         {
             return View();

@@ -1,0 +1,14 @@
+﻿@model ReturnViewModel
+@{
+    ViewData["Title"] = "Vigenere CipherHome Page";
+}
+
+<h1>@ViewData["title"]</h1>
+<h3 class="text-info">Lines of description about the cipher here</h3>
+<hr />
+<h4>About encryption</h4>
+<a class="btn btn-primary" asp-controller="Vigenere" asp-action="Encryption">Encryption</a>
+<hr />
+<h4>About decryption</h4>
+
+<a class="btn btn-primary" asp-controller="Vigenere" asp-action="Decryption">Decryption</a>

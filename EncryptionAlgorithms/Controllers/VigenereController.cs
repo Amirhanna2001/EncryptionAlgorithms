@@ -4,13 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EncryptionAlgorithms.Controllers
 {
-    public class PlayFairCipherController : Controller
+    public class VigenereController : Controller
     {
-        private string KEY = "EXAMPLEKEY";
-
         public IActionResult Index()
         {
-            return View();//Go to index HTML Page
+            return View();
         }
         public IActionResult Encryption()
         {
@@ -28,9 +26,9 @@ namespace EncryptionAlgorithms.Controllers
                 return View(model);
 
             }
-            ReturnViewModel returnViewModel = new ReturnViewModel();
+            ReturnViewModel returnViewModel = new();
             returnViewModel.Message = model.Message;
-            returnViewModel.Result =PlayFair.Encrypt(model.Message, KEY);
+            returnViewModel.Result = Vigenere.Encrypt(model.Message);
             return View(returnViewModel);
         }
         public IActionResult Decryption()
@@ -51,12 +49,8 @@ namespace EncryptionAlgorithms.Controllers
             }
             ReturnViewModel returnViewModel = new();
             returnViewModel.Message = model.Message;
-            returnViewModel.Result =PlayFair.Decrypt(model.Message, KEY);
+            returnViewModel.Result = Vigenere.Decrypt(model.Message);
             return View(returnViewModel);
         }
-
-
-       
-
     }
 }
