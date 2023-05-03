@@ -6,6 +6,8 @@ namespace EncryptionAlgorithms.Controllers
 {
     public class VigenereController : Controller
     {
+        private static string key = "QWERTYUIOPASDFGHJKLZXCVBNM";
+
         public IActionResult Index()
         {
             return View();
@@ -28,7 +30,7 @@ namespace EncryptionAlgorithms.Controllers
             }
             ReturnViewModel returnViewModel = new();
             returnViewModel.Message = model.Message;
-            returnViewModel.Result = Vigenere.Encrypt(model.Message);
+            returnViewModel.Result = Vigenere.Encrypt(model.Message,key);
             return View(returnViewModel);
         }
         public IActionResult Decryption()
@@ -49,7 +51,7 @@ namespace EncryptionAlgorithms.Controllers
             }
             ReturnViewModel returnViewModel = new();
             returnViewModel.Message = model.Message;
-            returnViewModel.Result = Vigenere.Decrypt(model.Message);
+            returnViewModel.Result = Vigenere.Decrypt(model.Message, key);
             return View(returnViewModel);
         }
     }
